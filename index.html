@@ -3,58 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineMatch</title>
+    <title>NIRF Ranker</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 <body>
     <div class="container">
-        <h1 id="pageTitle">CineMatch</h1>
-        <div class="autocomplete">
-            <input type="text" id="movieInput" placeholder="Enter a movie title..." oninput="fetchMovieSuggestions()" />
-            <div id="suggestions"></div>
-        </div>
-        <button id="searchButton" disabled onclick="getMovieRecommendations()">Search</button>
+        <h1>NIRF Ranker - College Ranking Based on Your Preferences</h1>
         
-        <!-- Initially hidden sections -->
-        <div id="selectedMovieContainer" style="display: none;">
-            <h2>Selected Movie</h2>
-            <div id="selectedMovie" class="selected-movie"></div>
-        </div>
+        <!-- Input form for user preferences -->
+        <form id="rankingForm">
+            <label for="tlr">TLR (Teaching, Learning & Resources):</label>
+            <input type="number" id="tlr" name="tlr" min="0" max="100" placeholder="Enter a value between 0 and 100" required>
 
-        <div id="recommendationsContainer" style="display: none;">
-            <h2>Recommended Movies</h2>
-            <div id="recommendations"></div>
+            <label for="rpc">RPC (Research & Professional Practices):</label>
+            <input type="number" id="rpc" name="rpc" min="0" max="100" placeholder="Enter a value between 0 and 100" required>
+
+            <label for="go">GO (Graduation Outcome):</label>
+            <input type="number" id="go" name="go" min="0" max="100" placeholder="Enter a value between 0 and 100" required>
+
+            <label for="oi">OI (Outreach & Inclusivity):</label>
+            <input type="number" id="oi" name="oi" min="0" max="100" placeholder="Enter a value between 0 and 100" required>
+
+            <label for="pr">PR (Perception):</label>
+            <input type="number" id="pr" name="pr" min="0" max="100" placeholder="Enter a value between 0 and 100" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Section to display ranked results -->
+        <div id="results" style="display:none;">
+            <h2>Ranked Colleges:</h2>
+            <ul id="rankingList"></ul>
+            <button id="returnButton">Return to Change Filters</button>
         </div>
     </div>
 
-    <!-- Modal for movie details -->
-    <div id="movieModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div class="modal-body">
-                <img id="moviePoster" src="" alt="Poster">
-                <div class="movie-details">
-                    <h2 id="movieTitle"></h2>
-                    <p><strong>Plot:</strong> <span id="plot"></span></p>
-                    <p><strong>Genres:</strong> <span id="genres"></span></p>
-                    <p><strong>Cast:</strong></p>
-                    <ul id="castList"></ul>
-                    <p><strong>Release Date:</strong> <span id="releaseDate"></span></p>
-                    <p><strong>Runtime:</strong> <span id="runtime"></span></p>
-                    <p><strong>Vote Count:</strong> <span id="votecount"></span></p>
-                    <p><strong>Popularity:</strong> <span id="popularity"></span></p>
-                    <p><strong>Vote Average:</strong> <span id="voteAverage"></span></p>
-                    <a id="homepageLink" href="#" target="_blank" style="display:none;">For More Details</a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <button id="modeToggle">Switch to Dark Mode</button>
-    </footer>
     <script src="script.js"></script>
 </body>
 </html>
