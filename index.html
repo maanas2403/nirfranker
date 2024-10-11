@@ -13,19 +13,74 @@
         <!-- Input form for user preferences -->
         <form id="rankingForm">
             <label for="tlr">TLR (Teaching, Learning & Resources):</label>
-            <input type="number" id="tlr" name="tlr" min="0" max="100" placeholder="Enter a value between 0 and 100" required>
+            <input type="number" id="tlr" name="tlr" min="0" max="100" placeholder="Enter a value between 0 and 100" value="">
+            
+
+    <div id="tlradvancedInputs" style="display: none;">
+        <label for="ss">SS (Student Strength)</label>
+        <input type="number" id="ss" min="0" max="100" placeholder="Enter a value between 0 and 100" value=""/>
+        
+        <label for="fsr">FSR (Faculty-student ratio)</label>
+        <input type="number" id="fsr" min="0" max="100" placeholder="Enter a value between 0 and 100" value=""/>
+
+        <label for="fqe">FQE (Faculty with PhD (or equivalent) and Experience)</label>
+        <input type="number" id="fqe" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" />
+
+        <label for="fru">FRU (Financial Resources and their Utilisation)</label>
+        <input type="number" id="fru"min="0" max="100" placeholder="Enter a value between 0 and 100" value=""/>
+    </div>
+    <button type="button" id="tlrtoggleAdvanced">Use Advanced Inputs</button>
 
             <label for="rpc">RPC (Research & Professional Practices):</label>
-            <input type="number" id="rpc" name="rpc" min="0" max="100" placeholder="Enter a value between 0 and 100" required>
-
+            <input type="number" id="rpc" name="rpc" min="0" max="100" placeholder="Enter a value between 0 and 100" value="">
+            <div id="rpcadvancedInputs" style="display: none;">
+                <label for="pu">PU (Publications)</label>
+                <input type="number" id="pu" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" />
+                
+                <label for="qp">QP (Quality of Publications)</label>
+                <input type="number" id="qp" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" />
+        
+                <label for="ipr">IPR (Patents Published and Granted)</label>
+                <input type="number" id="ipr" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" />
+        
+                <label for="fppp">FPPP (Footprint of Projects and Professional Practice)</label>
+                <input type="number" id="fppp" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" />
+            </div>
+            <button type="button" id="rpctoggleAdvanced">Use Advanced Inputs</button>
             <label for="go">GO (Graduation Outcome):</label>
-            <input type="number" id="go" name="go" min="0" max="100" placeholder="Enter a value between 0 and 100" required>
-
+            <input type="number" id="go" name="go" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" >
+            <div id="goadvancedInputs" style="display: none;">
+                <label for="gph">GPH (Placement and Higher Studies)</label>
+                <input type="number" id="gph" min="0" max="100" placeholder="Enter a value between 0 and 100" value=""/>
+                
+                <label for="gue">GUE (University Examinations)</label>
+                <input type="number" id="gue" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" />
+        
+                <label for="ms">MS (Median Salary)</label>
+                <input type="number" id="ms" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" />
+        
+                <label for="gphd">GPHD (Number of Ph.D Students Graduated)</label>
+                <input type="number" id="gphd" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" />
+            </div>
+            <button type="button" id="gotoggleAdvanced">Use Advanced Inputs</button>
             <label for="oi">OI (Outreach & Inclusivity):</label>
-            <input type="number" id="oi" name="oi" min="0" max="100" placeholder="Enter a value between 0 and 100" required>
-
+            <input type="number" id="oi" name="oi" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" >
+            <div id="oiadvancedInputs" style="display: none;">
+                <label for="rd">RD (Region Diversity)</label>
+                <input type="number" id="rd" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" />
+                
+                <label for="wd">WD (Women Diversity)</label>
+                <input type="number" id="wd" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" />
+        
+                <label for="escs">ESCS (Economically and Socially Challenged Students)</label>
+                <input type="number" id="escs" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" />
+        
+                <label for="pcs">PCS (Physically Challenged Students)</label>
+                <input type="number" id="pcs" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" />
+            </div>
+            <button type="button" id="oitoggleAdvanced">Use Advanced Inputs</button>
             <label for="pr">PR (Perception):</label>
-            <input type="number" id="pr" name="pr" min="0" max="100" placeholder="Enter a value between 0 and 100" required>
+            <input type="number" id="pr" name="pr" min="0" max="100" placeholder="Enter a value between 0 and 100" value="" >
 
             <button type="submit">Submit</button>
         </form>
