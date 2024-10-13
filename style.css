@@ -79,10 +79,147 @@ button:hover {
     margin-top: 20px;
     display: block;
     width: 100%;
-    background-color: #007bff;
+    background-color: #5cb85c;
     border-radius: 4px;
 }
 
 #returnButton:hover {
-    background-color: #0056b3;
+    background-color: #4cae4c;
+}
+#collegeDetailsModal {
+    position: fixed; /* Make it fixed to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    background-color: white; /* Background color */
+    border: 2px solid #5cb85c; /* Green border */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    width: 80%; /* Set a fixed width */
+    max-height: 80vh; /* Limit height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+#modalContent {
+    background-color: white; /* Modal background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    display: flex; /* Flex layout for side-by-side */
+}
+
+#collegeDetailsModal h3 {
+    text-align: center;
+}
+
+#collegeChart {
+    margin: 20px 20px;
+    
+}
+#tprbreakdownChart {
+    margin: 20px 20px;
+    
+}
+#rpcbreakdownChart {
+    margin: 20px 20px;
+    
+}
+#gobreakdownChart {
+    margin: 20px 20px;
+}
+#oibreakdownChart {
+    margin: 20px 20px;
+}
+#closeModalButton {
+    position: absolute; /* Absolute positioning to place it in the top right */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    background: none;
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    color: #d9534f; /* Red color for the close button */
+    font-size: 24px; /* Size of the close button */
+    cursor: pointer; /* Pointer cursor */
+    width: 50px;
+    height: 50px;
+}
+#charts{
+    display: flex;
+    flex-direction: column;
+}
+#closeModalButton:hover {
+    background-color: #5cb85c;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content label {
+    display: block;
+    padding: 8px;
+}
+
+.dropdown-content input {
+    margin-right: 5px;
+}
+
+.show {
+    display: block; /* This is crucial to show the dropdown */
+}
+@media only screen and (max-width: 600px) {
+    /* Adjust input fields and placeholders */
+    input, select {
+        font-size: 14px; /* Adjust font size */
+        padding: 8px;
+    }
+
+    input::placeholder {
+        font-size: 14px; /* Ensure placeholder fits */
+    }
+    #chartsContainer {
+        flex-direction: column; /* Stack the charts vertically */
+        align-items: center; /* Center-align the charts */
+    }
+    
+    #modalContent {
+        flex-direction: column; /* Stack college details and charts vertically */
+        align-items: center; /* Center-align the content */
+    }
+
+    #collegeDetails {
+        margin: 0 0 20px 0; /* Add bottom margin for spacing */
+        text-align: center; /* Center the text for mobile view */
+    }
+
+    #chartsContainer {
+        display: flex;
+        flex-direction: column; /* Ensure charts stack vertically */
+        align-items: center; /* Center-align the charts */
+        width: 100%; /* Full width for charts container */
+    }
+
+    #charts1,
+    #charts2 {
+        display: flex;
+        flex-direction: column; /* Stack charts vertically in each section */
+        align-items: center; /* Center-align the charts */
+        width: 100%; /* Full width for each chart section */
+        margin: 10px 0; /* Margin for spacing */
+    }
+
+    canvas {
+        margin: 10px 0; /* Margin between charts */
+        width: 100%; /* Make canvas take full width */
+        max-width: 250px; /* Limit maximum width */
+    }
 }
